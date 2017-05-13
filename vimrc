@@ -52,6 +52,7 @@ Plug 'vim-scripts/mru.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/neosnippet.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
