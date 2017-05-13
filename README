@@ -1,0 +1,14 @@
+Installation
+
+  git clone git://github.com/sendhil/dotvim.git
+
+Create symlinks:
+
+  ln -s ~/dotfiles/vimrc ~/.vimrc
+
+Configure Command-T
+  
+  cd ~/dotfiles/bundle/Command-T/ruby/command-t
+  ruby extconf.rb
+  make
+
