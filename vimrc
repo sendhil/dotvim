@@ -25,7 +25,6 @@ Plug 'moll/vim-node'
 Plug 'StanAngeloff/php.vim'
 Plug 'tpope/vim-rails'
 Plug 'hallison/vim-rdoc'
-Plug 'hallison/vim-ruby-sinatra'
 Plug 'mtth/scratch.vim'
 Plug 'kana/vim-smartinput'
 Plug 'tpope/vim-surround'
@@ -52,8 +51,10 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/neosnippet.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-syntastic/syntastic'
-
+Plug 'junegunn/fzf.vim'
 call plug#end()
+
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 source $HOME/.vim/general.vimrc
 source $HOME/.vim/plugins.vimrc

@@ -40,6 +40,8 @@ colorscheme solarized
 if !has('gui_running')
   " This fixes an issue with tmux
 end
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 
 autocmd FileType ruby set commentstring=#\ %s
 

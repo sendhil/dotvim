@@ -8,7 +8,7 @@ let g:airline_section_y=""
 
 function! VimGoAirline(...)
   if &filetype == 'go'
-    let w:airline_section_warning = airline#section#create(['whitespace', '%{go#jobcontrol#Statusline()}'])
+    let w:airline_section_warning = airline#section#create(['whitespace', '%{go#statusline#Show()}'])
   endif
 endfunction
 call airline#add_statusline_func('VimGoAirline')

@@ -2,8 +2,7 @@
 let g:deoplete#enable_at_startup = 1
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
-endif
-" let g:deoplete#disable_auto_complete = 1
+endif " let g:deoplete#disable_auto_complete = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " deoplete tab-complete
@@ -90,6 +89,9 @@ set re=1
 "set synmaxcol=128
 "
 
+"FZF
+set rtp+=/usr/local/opt/fzf
+
 " Neomake
 " Look for local eslint and if not use globally installed one
 let g:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
@@ -97,7 +99,7 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_javascript_eslint_exe=substitute(g:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 autocmd! BufWritePost * Neomake
 
-
+set grepprg=rg\ --vimgrep
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " Use The Silver Searcher, if it's available
