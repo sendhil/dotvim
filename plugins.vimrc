@@ -7,7 +7,6 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " deoplete tab-complete
 "neocomplete#start_manual_complete()
-
 " <Tab> completion:
 " 1. If popup menu is visible, select and insert next item
 " 2. Otherwise, if within a snippet, jump to next input
@@ -91,6 +90,10 @@ set re=1
 
 "FZF
 set rtp+=/usr/local/opt/fzf
+
+" Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 " Neomake
 " Look for local eslint and if not use globally installed one

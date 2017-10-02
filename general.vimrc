@@ -26,20 +26,20 @@ if has("gui_macvim")
 endif
 
 " Solarized Theme Settings
-if !has('gui_running')
-  " This fixes an issue with tmux
-  let g:solarized_visibility = "high" 
-end
-syntax enable
-let g:solarized_contrast = "high"
-let g:solarized_termtrans=1
-let g:solarized_termcolors = 256
-set background=dark
-colorscheme solarized
+" if !has('gui_running')
+"   " This fixes an issue with tmux
+"   let g:solarized_visibility = "high" 
+" end
 
-if !has('gui_running')
-  " This fixes an issue with tmux
-end
+syntax enable
+" let g:solarized_contrast = "high"
+" let g:solarized_termtrans=1
+" let g:solarized_termcolors = 256
+" set background=dark
+" colorscheme solarized
+
+set background=dark
+colorscheme one
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
@@ -47,5 +47,18 @@ autocmd FileType ruby set commentstring=#\ %s
 
 " highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
 " match OverLength /\%101v.\+/
+"
+" some new stuff
 
 set listchars=tab:▸\ ,eol:¬
+
+command! -bang -nargs=* Find
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+" Likewise, Files command with preview window
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)

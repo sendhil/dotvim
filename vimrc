@@ -1,14 +1,13 @@
 " Vim-Plug
 "
-call plug#begin('~/.vim/plugged')
-
+call plug#begin('~/.vim/plugged') 
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
 Plug 'mileszs/ack.vim'
-Plug 'rking/ag.vim'
-Plug 'vim-airline/vim-airline'
+Plug 'rking/ag.vim' 
+Plug 'vim-airline/vim-airline' 
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-bundler'
 Plug 'jvirtanen/vim-cocoapods'
@@ -46,12 +45,20 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'benekastah/neomake'
 Plug 'benjie/neomake-local-eslint.vim'
-Plug 'vim-scripts/mru.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/neosnippet.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/fzf.vim'
+Plug 'rakr/vim-one'
+Plug 'ryanoasis/vim-devicons'
+Plug 'Shougo/denite.nvim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'Shougo/neomru.vim'
+Plug 'ap/vim-css-color'
+Plug 'mattn/emmet-vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)

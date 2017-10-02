@@ -1,16 +1,18 @@
 let mapleader=','
-map <C-h> <C-w>h
-map <C-j> <C-w>j
+map <C-h> <C-w>h map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-map <C-e> :MRU<CR>
+" map <C-e> :MRU<CR>
+map <C-e> :Denite file_mru<CR>
 
 " List Navigation
 map <expr> <C-N> (empty(getloclist(1))  ? ":cn" : ":lnext")."\n"
 map <expr> <C-P> (empty(getloclist(0))  ? ":cp" : ":lp")."\n"
 
-nmap <Leader>f :LAg<CR>
-nmap <Leader>F :LAg 
+" nmap <Leader>f :LAg<CR>
+" nmap <Leader>F :LAg 
+nmap <Leader>f :Rg<CR>
+nmap <Leader>F :Rg 
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>ew :e %%
@@ -24,6 +26,8 @@ map <leader>st :tab split<CR>
 :nmap <leader>. :CtrlPTag<CR>
 let g:ctrlp_map = '<leader>t'
 
+nmap <silent> <F5> :set spell!<CR>
+
 :nmap \e :NERDTreeToggle<CR>
 :nmap \t :TagbarToggle<CR>
 
@@ -33,6 +37,13 @@ nmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>a> :Tabularize /=><CR>
 xmap \\ :TComment<CR>
 nmap \\ :TComment<CR>
+
+" Unite
+nnoremap <space>s :Denite buffer<cr>
+call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
+call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
 
 " neomake
 nmap <Leader><Space>o :lopen<CR>      " open location window
