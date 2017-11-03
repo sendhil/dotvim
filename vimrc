@@ -63,7 +63,7 @@ call plug#end()
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
-source $HOME/.vim/general.vimrc
-source $HOME/.vim/plugins.vimrc
-source $HOME/.vim/line.vimrc
-source $HOME/.vim/keys.vimrc
+source ~/.vim/general.vimrc
+source ~/.vim/plugins.vimrc
+source ~/.vim/line.vimrc
+source ~/.vim/keys.vimrc
